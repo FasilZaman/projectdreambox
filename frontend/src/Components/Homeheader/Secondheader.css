@@ -1,0 +1,10 @@
+.header {
+    margin-left: 43%;
+    font-family: 'Inika';
+}
+
+@media only screen and (max-width:640px) {
+    .header {
+        margin-left: 21%;
+    }
+}
