@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
 import { useNavigate } from 'react-router-dom'
-import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, Button, Menu, MenuItem } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import {Typographystyle} from './Headerstyle'
+
+
 function Header() {
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     const navigate = useNavigate()
     let user = localStorage.getItem("userData")
-    console.log(user);
     const [logout, setlogout] = useState()
 
     const logOut = () => {
@@ -13,40 +26,59 @@ function Header() {
         setlogout(true)
     }
 
+    const [userName, setUserName] = useState('')
+
     useEffect(() => {
-        let user = localStorage.getItem("userData")
+        let user = JSON.parse(localStorage.getItem("userData"))
         if (!user) {
             navigate('/')
+        } else {
+            setUserName(user.userName)
         }
-    }, [logout])
+    }, [logout, navigate])
 
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar sx={{ backgroundColor: 'rgb(238, 255, 255)' }} position="static">
                     <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        <Typography variant="h6" component="div" sx={Typographystyle} onClick={() => {
+                            navigate('/')
+                        }}>
                             <b className='logo'>
                                 Dreambox
                             </b>
                         </Typography>
                         {user ?
                             <div>
-                                <Button >
-                                    <span className='signup' >{user.userName}</span>
+                                <Button
+                                    onClick={handleClick}
+                                >
+                                    <span className='signup' >{userName} <ArrowDropDownIcon /> </span>
                                 </Button>
-                                <Button >
-                                    <span className='signup' onClick={logOut} > Logout</span>
-                                </Button>
+                                <Menu
+                                    anchorEl={anchorEl}
+                                    open={open}
+                                    onClose={handleClose}
+                                >
+                                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                    <MenuItem onClick={handleClose}>My bids</MenuItem>
+                                    <MenuItem onClick={handleClose}>My posts</MenuItem>
+                                    <MenuItem onClick={() => {
+                                        navigate('/sell')
+                                    }}>sell</MenuItem>
+                                    <hr />
+                                    <MenuItem onClick={logOut}>Logout</MenuItem>
+                                </Menu>
                             </div>
                             :
                             <div>
                                 <Button onClick={() => {
-                                    navigate('userlogin')
+                                    navigate('/userlogin')
                                 }} > <span className='signup'> Login </span>
                                 </Button>
                                 <Button onClick={() => {
-                                    navigate('usersignup')
+                                    navigate('/usersignup')
                                 }} ><span className='signup' > Signup </span>
                                 </Button>
                             </div>}

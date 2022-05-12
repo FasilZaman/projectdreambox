@@ -6,8 +6,6 @@
 .headDiv {
     height: 60px;
     width: 100%;
-    /* background-color: rgba(0, 0, 0, 0.074); */
-    /* margin-bottom: 10px black; */
 }
 
 .logo {
@@ -41,4 +39,5 @@
     color: #000000;
     cursor: pointer;
     float: right;
+    display: flex;
 }

@@ -47,7 +47,7 @@ router.post('/resendotp', (req, res) => {
   try {
     client.verify
       .services(serviceSID)
-      .verifications.create({
+      .verifications.create({  
         to: `+91${mobile}`,
         channel: "sms"
       }).then((resp) => {

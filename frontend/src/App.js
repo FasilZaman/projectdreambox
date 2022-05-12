@@ -7,6 +7,7 @@ import OTPlogin from './Components/OTP/OTPlogin';
 import EnterOTP from './Components/EnterOTP/EnterOTP';
 import { UserContext } from './Constants/Context';
 import { useState } from 'react';
+import Sell from './pages/Sell';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route exact path='/usersignup' element={<Signuppage />} />
             <Route exact path='/OTPlogin' element={<OTPlogin />} />
             <Route exact path='/OTP' element={<EnterOTP />} />
+            <Route exact path='/sell' element={<Sell/>} />
           </Routes>
         </Router>
       </UserContext.Provider>
