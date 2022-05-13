@@ -3,7 +3,7 @@ import './Header.css'
 import { useNavigate } from 'react-router-dom'
 import { AppBar, Box, Toolbar, Typography, Button, Menu, MenuItem } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import {Typographystyle} from './Headerstyle'
+import { Typographystyle } from './Headerstyle'
 
 
 function Header() {

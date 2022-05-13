@@ -12,4 +12,14 @@ const descriptionTextbox = {
     width: '95%',
 }
 
-export { textboxStyle ,textboxStyle1 , descriptionTextbox }
+const imageStyle = {
+    margin: '20px',
+}
+
+const submitButton = {
+    float:'right',
+    marginBottom: '30px',
+    marginRight:'40px'
+}
+
+export { textboxStyle ,textboxStyle1 , descriptionTextbox ,imageStyle ,submitButton}
