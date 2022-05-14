@@ -123,4 +123,14 @@ router.post('/login', (req, res) => {
   }
 })
 
+
+router.post('/addbid', (req, res) => {
+  // try{
+  let formData = JSON.parse(req.body.data)
+  console.log(formData);
+  // }catch{
+  //   console.log('error occuredggg')
+  // }
+})
+
 module.exports = router;

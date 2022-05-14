@@ -44,4 +44,8 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+.navBar {
+  background: #eeffff;
+}
 /*# sourceMappingURL=Header.css.map */

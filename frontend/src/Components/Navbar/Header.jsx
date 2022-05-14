@@ -40,7 +40,7 @@ function Header() {
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar sx={{ backgroundColor: 'rgb(238, 255, 255)' }} position="static">
+                <AppBar  sx={{ backgroundColor: 'rgb(238, 255, 255)' }} position="static">
                     <Toolbar>
                         <Typography variant="h6" component="div" sx={Typographystyle} onClick={() => {
                             navigate('/')

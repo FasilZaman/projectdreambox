@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACF,UAAU,ECDQ,IAAI;EDEtB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IACb;CAAC",
+    "sources": [
+        "Detailscarousel.scss",
+        "../../../Colortheme/Colortheme.scss"
+    ],
+    "names": [],
+    "file": "Detailscarousel.css"
+}
